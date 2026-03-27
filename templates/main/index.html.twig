@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<h1>{{ title }}</h1>
+<p>первый Twig шаблон </p>
+
+<h2>Список задач</h2>
+<ul>
+    {% for task in tasks %}
+        <li>
+            {{ task.title }} - {{ task.description }} - {% if task.isDone %}Выполнено{% else %}Не выполнено{% endif %}
+        </li>
+    {% else %}
+        <li>Задач пока нет</li>
+    {% endfor %}
+</ul>
